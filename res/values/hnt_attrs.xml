@@ -22,11 +22,4 @@
         <attr name="max" format="integer" />
         <attr name="units" format="string|reference" />
     </declare-styleable>
-
-    <declare-styleable name="IntervalSeekBar">
-        <attr name="minI" format="float" />
-        <attr name="maxI" format="float" />
-        <attr name="defaultValueFlash" format="float" />
-        <attr name="digits" format="integer" />
-    </declare-styleable>
 </resources>
