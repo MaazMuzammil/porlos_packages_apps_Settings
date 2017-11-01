@@ -647,6 +647,11 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mGoogleCameraEnabled = (SwitchPreference) findPreference(GOOGLE_CAMERA_HACK_ENABLED);
         mGoogleCameraEnabled.setChecked(SystemProperties.getBoolean(PROP_GOOGLE_CAMERA_HACK_ENABLED, false));
         mGoogleCameraEnabled.setOnPreferenceChangeListener(this);
+        if ((!SystemProperties.get("ro.product.device").equals("libra"))
+                || (!SystemProperties.get("ro.product.device").equals("aqua"))) {
+            removePreference(mGoogleCameraEnabled);
+            mGoogleCameraEnabled = null;
+        }
     }
 
     private ListPreference addListPreference(String prefKey) {
